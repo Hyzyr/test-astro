@@ -1,0 +1,21 @@
+---
+export const prerender = false;
+export const partial = true;
+
+const { mText, requestDate } = Astro.locals;
+const { user = 'noname' } = Astro.params;
+---
+
+<h4>Hi 👋, <b>{user} </b>.</h4>
+<ul>
+  <li>Profile of <b>{user} </b></li>
+  <li><b>{user} </b>'s Last activity</li>
+  <li><b>{user} </b> history</li>
+  <li>Settings</li>
+  <li>More about <b>{user} </b></li>
+</ul>
+<small
+  ><i>middleware request date - </i>
+  {mText}
+  {requestDate.toLocaleString('en-US')}</small
+>
